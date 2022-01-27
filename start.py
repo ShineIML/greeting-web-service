@@ -15,7 +15,7 @@ class Guest(db.Model):
 
 db.create_all()
 
-text = None
+text = None 
 
 
 @app.route('/', methods=['GET'])

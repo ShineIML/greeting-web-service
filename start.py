@@ -26,6 +26,7 @@ def index():
 @app.route('/name', methods=['GET', 'POST'])
 def add_name():
     db.session.begin()
+    Guest.query.all()
     user = Guest(username=request.form['name'])
     try:
         db.session.add(user)
@@ -35,7 +36,7 @@ def add_name():
         db.session.rollback()
         return render_template('seen.html', user=user)
     finally:
-        db.session.close() 
+        db.session.close()
 
 @app.route('/collection', methods=['GET'])
 def collection():

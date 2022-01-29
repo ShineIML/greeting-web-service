@@ -23,7 +23,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/name', methods=['GET' 'POST'])
+@app.route('/name', methods=['GET', 'POST'])
 def add_name():
     try:
         user = Guest(username=request.form['name'])
@@ -33,7 +33,6 @@ def add_name():
     except:
         db.session.rollback()
         return render_template('seen.html', user=user)
-
 
 
 @app.route('/collection', methods=['GET'])

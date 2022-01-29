@@ -18,6 +18,7 @@ db.create_all()
 text = None 
 
 
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')

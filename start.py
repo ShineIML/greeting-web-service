@@ -34,7 +34,8 @@ def add_name():
     except:
         db.session.rollback()
         return render_template('seen.html', user=user)
-        
+    finally:
+        db.session.close() 
 
 @app.route('/collection', methods=['GET'])
 def collection():

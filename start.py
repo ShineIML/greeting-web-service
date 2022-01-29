@@ -27,6 +27,7 @@ def add_name():
     try:
         user = Guest(username=request.form['name'])
         db.session.add(user)
+        db.session.flush()
         db.session.commit()
         return render_template('greetings.html', user=user)
     except:

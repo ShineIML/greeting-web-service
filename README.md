@@ -1,6 +1,6 @@
 ## [Greeting-web-service](https://greetings-web-service.herokuapp.com/)
 
-Needed to write a web service. On the main page, there is a form with a name input field and a "Greet" button. When you click on the button, if the name is encountered for the first time, enter "Hello, <Name>". If you have already met such a Name, Enter "I saw you, <Name>".
+Needed to write a web service. On the main page, there is a form with a name input field and a "Greet" button. When you click on the button, if the name is encountered for the first time, enter "Hello, Name". If you have already met such a Name, Enter "I saw you, Name".
 
 ## About development
 

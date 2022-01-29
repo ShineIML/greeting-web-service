@@ -7,9 +7,9 @@
 
 <body>
     {%if user in collection} 
-        <h1 style="text-align:center; font-family: ui-monospace;">Greetings, {{ user }}!</h1>
-    {%else}
         <h1 style="text-align:center; font-family: ui-monospace;">I've seen you before, {{ user }}!</h1>
+    {%else}
+        <h1 style="text-align:center; font-family: ui-monospace;">Greetings, {{ user }}</h1>
     {%endif}
     
     <h2 style="text-align:center; font-family: ui-monospace;">

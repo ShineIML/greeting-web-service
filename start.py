@@ -1,4 +1,5 @@
-import collections
+import os
+
 from flask import Flask, render_template, redirect, session, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from settings import SQLALCHEMY_DATABASE_URI
@@ -38,4 +39,5 @@ def add_name():
 @app.route('/collection', methods=['GET'])
 def collection():
     collection = Guest.query.all()
+    os.time.sleep(3)
     return render_template('collection.html', collection=collection)

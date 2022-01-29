@@ -16,6 +16,7 @@ class Guest(db.Model):
 
 db.create_all()
 
+users = set()
 
 @app.route('/', methods=['GET'])
 def index():
@@ -28,6 +29,7 @@ def add_name():
     try:
         db.session.add(user)
         db.session.commit()
+        users.add(user)
         return render_template('greetings.html', user=user)
     except:
         db.session.rollback()
@@ -36,5 +38,4 @@ def add_name():
 
 @app.route('/collection', methods=['GET'])
 def collection():
-    collection = Guest.query.all()
-    return render_template('collection.html', collection=collection)
+    return render_template('collection.html', users=users)

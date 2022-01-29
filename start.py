@@ -25,15 +25,16 @@ def index():
 
 @app.route('/name', methods=['GET', 'POST'])
 def add_name():
-    Guest.query.all()
     try:
         user = Guest(username=request.form['name'])
         db.session.add(user)
         db.session.commit()
-        return render_template('greetings.html', user=user)
+        if user not in collection == Guest.query.all():
+            return render_template('greetings.html', user=user)
+        else:
+            return render_template('seen.html', user=user)
     except:
         db.session.rollback()
-        return render_template('seen.html', user=user)
 
 
 @app.route('/collection', methods=['GET'])

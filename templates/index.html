@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Web-service-about</title>
+    <style type="text/css">
+        #txt{
+            width: 100px;
+        }
+        #btn{
+            width: 100px;
+        }
+        #buttonHolder{
+            width:400px;
+            margin:auto 0;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
 <h1 style="text-align:center;">Enter your name down below:</h1>
 
 <form method="post" action="/name">
-    <input type="text" name="name" size="45" style="text-align:center;">
-    <button type="submit">Greet</button>
+    <div id="buttonHolder">
+        <input type="text" name="name" size="45" id=txt>
+        <button type="submit" id=btn>Greet</button>
+    </div>
 </form>
 <br></br>
-<a href="{{ url_for('collection') }}" style="text-align:center;">List of greeted</a>
+<a href="{{ url_for('collection') }}">List of greeted</a>
 
 </html>

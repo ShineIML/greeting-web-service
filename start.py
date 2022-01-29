@@ -2,10 +2,10 @@ from flask import Flask, render_template, redirect, session, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pguser:pgpassword@localhost:5433/app_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://jbduzvmgcsebtb:27f5e32b0cebfa3ca9171208a59eda40e00cd70a99d810eccf30c61a66b526ba@ec2-54-73-152-36.eu-west-1.compute.amazonaws.com:5432/dasvmqpo1ebrjj'
 db = SQLAlchemy(app)
 
-
+#postgresql://pguser:pgpassword@localhost:5433/app_db
 class Guest(db.Model):
     username = db.Column(db.String(80), primary_key=True, unique=True, nullable=False)
 

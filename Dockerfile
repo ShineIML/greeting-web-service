@@ -8,6 +8,6 @@ RUN pip install -r requirements.txt && rm requirements.txt
 
 COPY . .
 
-ENV FLASK_APP="start.py" FLASK_DEBUG=1 DATABASE_URL='postgresql://jbduzvmgcsebtb:27f5e32b0cebfa3ca9171208a59eda40e00cd70a99d810eccf30c61a66b526ba@ec2-54-73-152-36.eu-west-1.compute.amazonaws.com:5432/dasvmqpo1ebrjj'
+ENV FLASK_APP="start.py" FLASK_DEBUG=1 DATABASE_URL='postgresql://xdfhkkmhunxxim:5b2f2c590b5963a8bd3422bce0283a7730a9b0dea7ee2a7580e15ee291f7e8d6@ec2-34-242-89-204.eu-west-1.compute.amazonaws.com:5432/d1r7qn9gh3f6ug'
 
 CMD [ "flask", "run", "--host=0.0.0.0"]

@@ -30,7 +30,7 @@ def add_name():
         Guest.query.all()
         db.session.add(user)
         db.session.commit()
-        return render_template('greetings.html', user=user, collection=collection)
+        return render_template('greetings.html', user=user)
     except:
         db.session.rollback()
         return render_template('seen.html', user=user)

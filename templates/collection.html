@@ -6,15 +6,14 @@
 </head>
 
 <body>
-    <h1 style="text-align:center; font-family: ui-monospace;">
+    <h1>
     	<a href=" {{ url_for('index') }}">Main page</a>
     </h1>
-    <h2 style="text-align:center; font-family: ui-monospace;">List of greeted users:</h2>
-    <div style="text-align:center; font-family: ui-monospace;">
-        {% for name in collection %}
-        <div>{{ name }}</div>
-        {% endfor %}
-    </div>
+    <h2>List of greeted users:</h2>
+    {% for name in collection %}
+    <div>{{ name }}</div>
+    {% endfor %}
+
 </body>
 
 

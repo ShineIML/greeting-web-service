@@ -25,9 +25,9 @@ def index():
 
 @app.route('/name', methods=['GET', 'POST'])
 def add_name():
-    collection = Guest.query.all() 
     try:
         user = Guest(username=request.form['name'])
+        Guest.query.all()
         db.session.add(user)
         db.session.commit()
         return render_template('greetings.html', user=user, collection=collection)

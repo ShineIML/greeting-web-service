@@ -6,12 +6,7 @@
 </head>
 
 <body>
-    {%if user in collection} 
-        <h1 style="text-align:center; font-family: ui-monospace;">I've seen you before, {{ user }}!</h1>
-    {%else}
-        <h1 style="text-align:center; font-family: ui-monospace;">Greetings, {{ user }}</h1>
-    {%endif}
-    
+    <h1 style="text-align:center; font-family: ui-monospace;">Greetings, {{ user }}</h1>
     <h2 style="text-align:center; font-family: ui-monospace;">
         <a href=" {{ url_for('index') }}">Go back</a>
     </h2>

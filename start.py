@@ -25,11 +25,12 @@ def index():
 
 @app.route('/name', methods=['GET', 'POST'])
 def add_name():
+    collection = Guest.query.all() 
     try:
         user = Guest(username=request.form['name'])
         db.session.add(user)
         db.session.commit()
-        return render_template('greetings.html', user=user)
+        return render_template('greetings.html', user=user, collection=collection)
     except:
         db.session.rollback()
         return render_template('seen.html', user=user)

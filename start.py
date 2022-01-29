@@ -23,10 +23,11 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/name', methods=['POST'])
+@app.route('/name', methods=['GET' 'POST'])
 def add_name():
     try:
         user = Guest(username=request.form['name'])
+        collection = Guest.query.all()
         db.session.add(user)
         db.session.commit()
         return render_template('greetings.html', user=user)

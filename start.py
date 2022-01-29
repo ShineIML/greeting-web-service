@@ -35,7 +35,7 @@ def add_name():
         db.session.commit()
         return render_template('greetings.html', user=user)
     else:
-        render_template('index.html')
+        return render_template('index.html')
     
     
     

@@ -6,13 +6,13 @@
 </head>
 
 <body>
-<h1>Enter your name down below:</h1>
+<h1 style="text-align:center;">Enter your name down below:</h1>
 
 <form method="post" action="/name">
-    <input type="text" name="name" size="45">
+    <input type="text" name="name" size="45" style="text-align:center;">
     <button type="submit">Greet</button>
 </form>
 <br></br>
-<a href="{{ url_for('collection') }}">List of greeted</a>
+<a href="{{ url_for('collection') }}" style="text-align:center;">List of greeted</a>
 
 </html>

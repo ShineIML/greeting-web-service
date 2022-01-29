@@ -30,10 +30,12 @@ def add_name():
     if user in collection:
         db.session.rollback()
         return render_template('seen.html', user=user)
-    else:
+    elif user not in collection:
         db.session.add(user)
         db.session.commit()
         return render_template('greetings.html', user=user)
+    else:
+        render_template('index.html')
     
     
     

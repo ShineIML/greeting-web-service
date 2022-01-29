@@ -3,10 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from settings import SQLALCHEMY_DATABASE_URI
 
 app = Flask(__name__)
-app.config[SQLALCHEMY_DATABASE_URI] = 'postgresql://xdfhkkmhunxxim:5b2f2c590b5963a8bd3422bce0283a7730a9b0dea7ee2a7580e15ee291f7e8d6@ec2-34-242-89-204.eu-west-1.compute.amazonaws.com:5432/d1r7qn9gh3f6ug'
+app.config[
+    SQLALCHEMY_DATABASE_URI] = 'postgresql://xdfhkkmhunxxim:5b2f2c590b5963a8bd3422bce0283a7730a9b0dea7ee2a7580e15ee291f7e8d6@ec2-34-242-89-204.eu-west-1.compute.amazonaws.com:5432/d1r7qn9gh3f6ug'
 db = SQLAlchemy(app)
 
-#postgresql://pguser:pgpassword@localhost:5433/app_db
 
 class Guest(db.Model):
     username = db.Column(db.String(80), primary_key=True, unique=True, nullable=False)
@@ -33,7 +33,6 @@ def add_name():
     except:
         db.session.rollback()
         return render_template('seen.html', user=user)
-
 
 
 @app.route('/collection', methods=['GET'])

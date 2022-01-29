@@ -38,5 +38,5 @@ def add_name():
 
 @app.route('/collection', methods=['GET'])
 def collection():
-    collection = Guest.query.all()
+    collection = Guest.query.all() 
     return render_template('collection.html', collection=collection)

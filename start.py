@@ -23,7 +23,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/name', methods=['GET', 'POST'])
+@app.route('/name', methods=['POST'])
 def add_name():
     try:
         user = Guest(username=request.form['name'])
